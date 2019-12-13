@@ -80,7 +80,7 @@ class cmake(bb_base, hpccm.templates.rm, hpccm.templates.tar,
         """Initialize building block"""
 
         super(cmake, self).__init__(**kwargs)
-
+        # Some change
         self.__baseurl = kwargs.get('baseurl', 'https://cmake.org/files')
         self.__bootstrap_opts = kwargs.get('bootstrap_opts', [])
 
@@ -136,7 +136,7 @@ class cmake(bb_base, hpccm.templates.rm, hpccm.templates.tar,
                                        match.groupdict()['minor'])
         runfile = 'cmake-{}-Linux-x86_64.sh'.format(self.__version)
         url = '{0}/v{1}/{2}'.format(self.__baseurl, major_minor, runfile)
-
+        # Another
         # Download source from web
         self.__commands.append(self.download_step(url=url,
                                                   directory=self.__wd))
